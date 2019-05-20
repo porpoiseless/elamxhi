@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "name": "elamxhí",
+            "type": "chrome",
+	    "root": "public",
+	    "url": "http://localhost:8080/"
+        }	
+    ]
+}
