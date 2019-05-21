@@ -1,0 +1,6 @@
+const StemTable = {
+
+};
+const Ithkuil = {
+
+};

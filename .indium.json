@@ -4,7 +4,7 @@
             "name": "elamxhí",
             "type": "chrome",
 	    "root": "public",
-	    "url": "http://localhost:8080/"
+	    "url": "http://localhost:8081/"
         }	
     ]
 }
