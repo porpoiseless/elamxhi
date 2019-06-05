@@ -3,8 +3,14 @@
         {
             "name": "elamxhí",
             "type": "chrome",
-	    "root": "public",
+	    "root": "src",
 	    "url": "http://localhost:8081/"
-        }	
+        },
+	{
+            "name": "elamxhí scraper",
+            "type": "node",
+	    "root": "src",
+	    "command": "node ./src/scraper.js"
+        }
     ]
 }

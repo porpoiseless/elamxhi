@@ -1,6 +1,3 @@
-const StemTable = {
-
-};
 const Ithkuil = {
 
 };
