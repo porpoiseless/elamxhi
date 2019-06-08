@@ -21,7 +21,6 @@ const slurpWhile = (condition) => (elt) => {
 // guess major roots on the basis of a gloss string
 const guessMajorRoot = (elt, gloss) => {
     const results = /[\-–]([SŠPTŢKBDGQMNŇJXRŘFVZŻŽLĻÇCČ][WY’hʰHSŠPTŢKBDGQMNŇJXRŘFVZŻŽLĻÇCČ]{0,4})[\-–]/i.exec(gloss);
-    return results && results.length > 1
-        ? cleanString(results[1]) :
+    return results ? cleanString(results[1]) :
         false;
 };

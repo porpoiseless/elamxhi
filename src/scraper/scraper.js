@@ -55,8 +55,8 @@ const scrapePage = async (url) => {
                     elt.nodeName == "A")(strong);
                 return {
                     root: root,
-                    gloss: cleanString(gloss),
-                    major: guessMajorRoot(strong, gloss)
+                    major: guessMajorRoot(strong, gloss),
+                    gloss: cleanString(gloss)
                 };
             });
     });
@@ -186,13 +186,35 @@ const joinLexicons = ({ major: m1, derived: d1 }, { major: m2, derived: d2 }) =>
     major: [...m1, ...m2],
     derived: [...d1, ...d2]
 });
-
+//
+const derivedRootReducer = (acc = { index: {}, orphans: [] }, item) => {
+    const { index, orphans } = acc,
+        { root, major } = item;
+    if (root && major) {    // if we have a candidate for the derived and major roots 
+        const newMajorIndex = index[major] instanceof Array ? // add it to the existing entry
+            index[major].concat(item) : Array.of(item); // or create a new one
+        const newIndex = { ...index, [major]: newMajorIndex };
+        return { ...acc, index: newIndex };
+    } else {
+        const newOrphans = orphans.concat(item);
+        return { ...acc, orphans: newOrphans };
+    }
+};
 const data = rawData.then(
     (data) => data.map(({ major, derived }) => {
         return {
             major: major.map(formatStemTable),
             derived: derived
         };
-    })).then(o =>
-        fs.writeFileSync('dictionary.json', JSON.stringify(o)))
-    .catch(o => console.log(o));
+    }))
+    .then((collection) => joinLexicons(...collection))
+    .then(({ major, derived }) => Object.assign(
+        {},
+        {
+            major: major.filter(({ root }) => Boolean(root)),
+            majorProblems: major.filter(({ root }) => !Boolean(root))
+        },
+        derived.reduce(derivedRootReducer, { index: {}, orphans: [] })
+    ))
+    .then((o) => fs.writeFileSync('dictionary.json', JSON.stringify(o)))
+    .catch((err) => console.log(err));
