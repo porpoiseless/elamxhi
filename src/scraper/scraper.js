@@ -149,7 +149,7 @@ const handleComplementaryStemsSupplement = (input, output) =>
             designation: col
         }));
 //
-const formatStemTable = ({ root, gloss, stems, src }) => {
+const formatStemTable = ({ root, note, gloss, stems, src }) => {
     let tbl = new StemTable();
     // first three lines of table are holistic stems
     const holistic = stems.slice(0, 3);
@@ -166,6 +166,7 @@ const formatStemTable = ({ root, gloss, stems, src }) => {
         root: root,
         gloss: gloss,
         stems: tbl.stems,
+        note: note,
         src: src
     };
 };

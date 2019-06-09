@@ -699,7 +699,7 @@
     },
     {
       "root": "čn",
-      "gloss": "čn- ‘degree of wakefulness or consciousness’ note: stems from this root are used in conjunction with various degree indicator affixes such as the exn, exd and suf affixes from sec. 7.7.6 in order to distinguish which polarity (awake vs. asleep) is implied.",
+      "gloss": "čn- ‘degree of wakefulness or consciousness’",
       "stems": [
         [
           [
@@ -736,6 +736,7 @@
           ]
         ]
       ],
+      "note": "note: stems from this root are used in conjunction with various degree indicator affixes such as the exn, exd and suf affixes from sec. 7.7.6 in order to distinguish which polarity (awake vs. asleep) is implied.",
       "src": "http://localhost:8080/lexicon.html"
     },
     {
@@ -781,7 +782,7 @@
     },
     {
       "root": "čh",
-      "gloss": "čh- ‘make/construct/integrate/form’ (note: this root does not refer to ‘make/create’ meaning ‘emit/secrete/produce’as in ‘make noise’ or ‘make milk’, etc.)",
+      "gloss": "čh- ‘make/construct/integrate/form’",
       "stems": [
         [
           [
@@ -818,6 +819,7 @@
           ]
         ]
       ],
+      "note": "note: this root does not refer to ‘make/create’ meaning ‘emit/secrete/produce’as in ‘make noise’ or ‘make milk’, etc. the meanings represent these stems as used in conjunction with the completive (cpt) version. their default processual (pct) counterparts would translate as ‘plan (to)’, ‘design’, etc.",
       "src": "http://localhost:8080/lexicon.html"
     },
     {
@@ -1351,6 +1353,7 @@
           ]
         ]
       ],
+      "note": "note: due to the bilateral symmetry of this body part, the above stems are often used in the duplex configuration, the uniplex form referring only to one side of the bodily part or the other.",
       "src": "http://localhost:8080/lexicon.html"
     },
     {
@@ -1966,6 +1969,7 @@
           ]
         ]
       ],
+      "note": "note: this root, like the root -sp- ‘exchange’ refers to a naturally two-sided (i.e., complementary) process involving the acts or states of mind of two different parties: the party doing the excusing, pardoning, forgiving, absolution, etc., and the party seeking to be excused, pardoned, forgiven, absolved, etc. the holistic stems refer to this complementary process, while the complementary stems reference each “side” of the situation. note also that the speaker should take care to utilize version categories carefully with these stems (especially when using the holistic stems), in order to distinguish whether or not the person seeking pardon, forgiveness, etc., is, in fact, pardoned, forgiven, etc. likewise, the speaker should consider whether it is appropriate to utilize a valence category when using these stems, given that their semantics naturally entail the actions/states of two parties",
       "src": "http://localhost:8080/lexicon.html"
     },
     {
@@ -2581,6 +2585,7 @@
           ]
         ]
       ],
+      "note": "note: this stem patterns for the above root are a template for all other roots donating a specific color.",
       "src": "http://localhost:8080/lexicon.html"
     },
     {
@@ -2704,6 +2709,7 @@
           ]
         ]
       ],
+      "note": "note: the above root (and those roots which follow the same pattern of stems) are likely to be used in conjunction with the various valence categories (see section 6.2) to specify the exact nature of the relationship between the parties involved. note also that, for relationships where the parties are acting in equivalent roles or positions of equal stature (i.e., no “dominant” vs. “passive” roles), use of stems 2 and 3 above would be inapplicable.",
       "src": "http://localhost:8080/lexicon.html"
     },
     {
@@ -4344,6 +4350,7 @@
           ]
         ]
       ],
+      "note": "note: when using the above stems to refer to forces (e.g., gravity or electromagnetism), one must realize that the individual stems refer to a particular instance of force/interaction from a single (i.e., particular) particle. one must inflect the stem appropriately as for configuration, association, perspective, etc., when speaking of “the force of gravity” or “electricity” as a generic concept.",
       "src": "http://localhost:8080/lexicon.html"
     },
     {
@@ -5779,6 +5786,48 @@
           ]
         ]
       ],
+      "src": "http://localhost:8080/lexicon.html"
+    },
+    {
+      "root": "sp",
+      "gloss": "sp- ‘exchange/purchase’",
+      "stems": [
+        [
+          [
+            "exchange / swap",
+            "substitute / transpose / interchange",
+            "change out / supplant / replace"
+          ],
+          [
+            "exchange (focus on entity given)",
+            "substitute / transpose / interchange (focus on entity substituted into new function/place)",
+            "change out / supplant / replace (focus on entity newly placed)"
+          ],
+          [
+            "exchange (focus on entity taken)",
+            "substitute / transpose / interchange (focus on entity substituted out of old function/place)",
+            "change out / supplant / replace (focus on entity taken out of action)"
+          ]
+        ],
+        [
+          [
+            "act of trade / act of barter",
+            "purchase / commercial transaction; buy(ing) and sell(ing)",
+            "invest(ment)"
+          ],
+          [
+            "to trade for / acquire through trade; act of acquiring via trade",
+            "buy; acquisition via purchase",
+            "acquire via investment; act of acquisition via investment"
+          ],
+          [
+            "to trade away / give up through trade; act of given away via trade",
+            "sell; act of selling",
+            "release interest in / sell one’s investment"
+          ]
+        ]
+      ],
+      "note": "note: the stems below are generally used in conjunction with processual versus completive version (see secs. 5.3.1 and 5.3.2) in order to distinguish an offer of exchange from a completed exchange. alternately, the distinction between monoactive and complementary valence (sec. 5.2) can be used for the same purpose.",
       "src": "http://localhost:8080/lexicon.html"
     },
     {
@@ -7706,6 +7755,7 @@
           ]
         ]
       ],
+      "note": "note: in ithkuil, guns, catapults, slings and all other firearms or devices for shooting/hurling projectiles utilize degree 1 of the ute suffix ('tool/implement for doing x'), as it is not the firearm/shooting device that kills but the projectile shot/fired from it. thus a gun is a \"bullet-implementer\". care must be taken in assigning appropriate noun cases or verbal formats to stems associated with ballistic aerial weapons to distinguish the fact that it is the projectile that is the actual \"weapon\" and not the object it was fired/projected from. this is the good old \"shoot bullets\" vs. \"shoot guns\" vs. \"shoot bullets from a gun\" vs. \"shoot him with a gun\" vs. \"shoot him with bullets from a gun\" problem . this would translate into ithkuil as \"i bulleted him due to/enabled by a gun\" or incorparatively as \"i gun-bulleted him\" using either the resultative format (literally translating as \"i bulleted him as a result of concurrently gun-activating\") or the instrumentative format (literally translating as \"i bulleted him by the enabling means of gun-activating\").",
       "src": "http://localhost:8080/lexicon.html"
     },
     {
@@ -7829,6 +7879,7 @@
           ]
         ]
       ],
+      "note": "note: due to the bilateral symmetry of this body part, the above stems are often used in the duplex configuration, the uniplex form referring only to one side of the bodily part or the other.",
       "src": "http://localhost:8080/lexicon.html"
     },
     {
@@ -8485,6 +8536,7 @@
           ]
         ]
       ],
+      "note": "note: use of the formal stems of this root is often in conjunction with functional (fnc) context, given that calendrical concepts and cyclic/periodic activities associated with particular days are societal conventions as opposed to being natural ontological phenomena.",
       "src": "http://localhost:8080/lexicon.html"
     },
     {
@@ -9018,6 +9070,7 @@
           ]
         ]
       ],
+      "note": "note: this root reflects self-interest as a virtue, in that it implies egoism not at the expense of others nor interference with others’ rights. this root should be distinguished from -lfq- “selfishness/self-centeredness” which implies negative traits which potentially affect others adversely.",
       "src": "http://localhost:8080/lexicon_supplement_1.html"
     },
     {
@@ -9059,6 +9112,7 @@
           ]
         ]
       ],
+      "note": "note: the formal stems should be contrasted with the pattern 1 formal stem of the root -st-. the latter stem means an agential act of measuring something or to agentially measure something (i.e., to discern/discover one’s dimensional measurements in terms of some arbitrary system of units)",
       "src": "http://localhost:8080/lexicon_supplement_1.html"
     },
     {
@@ -9842,7 +9896,7 @@
     },
     {
       "root": "mft",
-      "gloss": "mft- dairy product (note: for milk in a non-food context, i.e., as a secretion of mammary glands, see the root -sk-)",
+      "gloss": "mft- dairy product",
       "stems": [
         [
           [
@@ -9879,6 +9933,7 @@
           ]
         ]
       ],
+      "note": "note: for milk in a non-food context, i.e., as a secretion of mammary glands, see the root -sk-)",
       "src": "http://localhost:8080/lexicon_supplement_1.html"
     },
     {
@@ -10047,7 +10102,7 @@
     },
     {
       "root": "nţw",
-      "gloss": "nţw- ‘affective bodily sensations (internal/proprioceptive) [note: this root refers to physical sensation only, not subjective mental/psychological states. the stems of this root take the suf, exn, exd suffixes, etc. to specify the degree of the particular quality]",
+      "gloss": "nţw- ‘affective bodily sensations (internal/proprioceptive)",
       "stems": [
         [
           [
@@ -10084,6 +10139,7 @@
           ]
         ]
       ],
+      "note": "note: this root refers to physical sensation only, not subjective mental/psychological states. the stems of this root take the suf, exn, exd suffixes, etc. to specify the degree of the particular quality",
       "src": "http://localhost:8080/lexicon_supplement_1.html"
     },
     {
@@ -10129,7 +10185,7 @@
     },
     {
       "root": "ňsk",
-      "gloss": "ňsk- aspects of bodily physical capacity or physical bodily performance [note: the stems below take the exn, suf, exd(, etc.) suffixes to specify the degree of the particular quality]",
+      "gloss": "ňsk- aspects of bodily physical capacity or physical bodily performance",
       "stems": [
         [
           [
@@ -10166,6 +10222,7 @@
           ]
         ]
       ],
+      "note": "note: the stems below take the exn, suf, exd(, etc.) suffixes to specify the degree of the particular quality",
       "src": "http://localhost:8080/lexicon_supplement_1.html"
     },
     {
@@ -10740,6 +10797,7 @@
           ]
         ]
       ],
+      "note": "note: all of the meanings listed below refer to stems with cpt version; the default prc version counterparts of these meanings would refer to the process or act of consideration leading up to the completive state of affairs",
       "src": "http://localhost:8080/lexicon_supplement_1.html"
     },
     {
@@ -11238,6 +11296,7 @@
           ]
         ]
       ],
+      "note": "note: the stems of this root all refer to the emotional/spiritual inspiration one experiences via the observation/contemplation of a subjectively pleasing entity aesthetically-speaking. the specific stems are distinguished solely by the degree/nature of the aesthetic experience. the holistic roots refer to the total experiential relationship between the aesthetically-pleasing entity and the observer/experiencer. the complementary stems distinguish between the source entity from the observer’s emotional/spiritual reaction.",
       "src": "http://localhost:8080/lexicon_supplement_1.html"
     },
     {
@@ -11529,7 +11588,7 @@
     },
     {
       "root": "ţp",
-      "gloss": "ţp- degree of cleanliness or purity / degree of tidiness / hygiene (note: the stems below normally utilize the suf, exd, exn, etc. suffixes to specify the particular degree of the qualitative spectrum indicated by the stem)",
+      "gloss": "ţp- degree of cleanliness or purity / degree of tidiness / hygiene",
       "stems": [
         [
           [
@@ -11566,6 +11625,7 @@
           ]
         ]
       ],
+      "note": "note: the stems below normally utilize the suf, exd, exn, etc. suffixes to specify the particular degree of the qualitative spectrum indicated by the stem",
       "src": "http://localhost:8080/lexicon_supplement_1.html"
     },
     {
@@ -11771,6 +11831,7 @@
           ]
         ]
       ],
+      "note": "note: the stems of this root all refer to the existential irony/frustration/unfairness arising from observing how persons (or situations) characterized by unfavorable, non-virtuous, negative, or morally “flawed” behavior, character traits, or characteristics/attributes are nevertheless often contented or happy or fulfilled or successful/thriving despite their nature. the individual stems specify the particular set of behaviors/characteristics/traits giving rise to such existential irony/frustration.",
       "src": "http://localhost:8080/lexicon_supplement_1.html"
     },
     {
@@ -11812,6 +11873,7 @@
           ]
         ]
       ],
+      "note": "note: the stems of this root operate under the same principles as the root -šw- “beauty” except that the latter root focuses on purely aesthetic appreciation of an entity, whereas this root focuses on the subjective impression of physical and/or functional well-formedness/use in a mechanistic way.",
       "src": "http://localhost:8080/lexicon_supplement_1.html"
     },
     {
@@ -12016,47 +12078,6 @@
             null,
             null,
             null
-          ]
-        ]
-      ],
-      "src": "http://localhost:8080/lexicon.html"
-    },
-    {
-      "root": false,
-      "gloss": "sp- ‘exchange/purchase’ note: the stems below are generally used in conjunction with processual versus completive version (see secs. 5.3.1 and 5.3.2) in order to distinguish an offer of exchange from a completed exchange. alternately, the distinction between monoactive and complementary valence (sec. 5.2) can be used for the same purpose.",
-      "stems": [
-        [
-          [
-            "exchange / swap",
-            "substitute / transpose / interchange",
-            "change out / supplant / replace"
-          ],
-          [
-            "exchange (focus on entity given)",
-            "substitute / transpose / interchange (focus on entity substituted into new function/place)",
-            "change out / supplant / replace (focus on entity newly placed)"
-          ],
-          [
-            "exchange (focus on entity taken)",
-            "substitute / transpose / interchange (focus on entity substituted out of old function/place)",
-            "change out / supplant / replace (focus on entity taken out of action)"
-          ]
-        ],
-        [
-          [
-            "act of trade / act of barter",
-            "purchase / commercial transaction; buy(ing) and sell(ing)",
-            "invest(ment)"
-          ],
-          [
-            "to trade for / acquire through trade; act of acquiring via trade",
-            "buy; acquisition via purchase",
-            "acquire via investment; act of acquisition via investment"
-          ],
-          [
-            "to trade away / give up through trade; act of given away via trade",
-            "sell; act of selling",
-            "release interest in / sell one’s investment"
           ]
         ]
       ],
@@ -18678,12 +18699,6 @@
       "root": "",
       "major": false,
       "gloss": "",
-      "src": "http://localhost:8080/lexicon.html"
-    },
-    {
-      "root": "sp",
-      "major": false,
-      "gloss": "‘exchange’ refers to a naturally two-sided (i.e., complementary) process involving the acts or states of mind of two different parties: the party doing the excusing, pardoning, forgiving, absolution, etc., and the party seeking to be excused, pardoned, forgiven, absolved, etc. the holistic stems refer to this complementary process, while the complementary stems reference each “side” of the situation.",
       "src": "http://localhost:8080/lexicon.html"
     },
     {
