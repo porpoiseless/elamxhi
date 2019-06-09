@@ -168,6 +168,10 @@ const formatStemTable = ({ root, note, gloss, stems, src }) => {
         stems: tbl.stems,
         note: note,
         src: src
+            .replace(/localhost:8080/, "ithkuil.net")
+            .replace(/lexicon\.html/, "lexicon.htm")
+            .replace(/1\.html/, "1_.pdf")
+
     };
 };
 
@@ -180,8 +184,7 @@ const scrapeURLS = async (...urls) => {
     );
 };
 
-const rawData = scrapeURLS('http://localhost:8080/lexicon.html',
-    'http://localhost:8080/lexicon_supplement_1.html');
+
 // 
 const joinLexicons = ({ major: m1, derived: d1 }, { major: m2, derived: d2 }) => ({
     major: [...m1, ...m2],
@@ -201,21 +204,33 @@ const derivedRootReducer = (acc = { index: {}, orphans: [] }, item) => {
         return { ...acc, orphans: newOrphans };
     }
 };
-const data = rawData.then(
-    (data) => data.map(({ major, derived }) => {
-        return {
-            major: major.map(formatStemTable),
-            derived: derived
-        };
-    }))
+// putting it all together:
+// scrape urls
+const data = scrapeURLS('http://localhost:8080/lexicon.html',
+    'http://localhost:8080/lexicon_supplement_1.html')
+    // format major roots
+    .then((data) => data.map(
+        ({ major, derived }) => (
+            {
+                major: major.map(formatStemTable),
+                derived: derived
+            })))
+    // join lexicons
     .then((collection) => joinLexicons(...collection))
+    // 
     .then(({ major, derived }) => Object.assign(
         {},
         {
             major: major.filter(({ root }) => Boolean(root)),
-            majorProblems: major.filter(({ root }) => !Boolean(root))
+            // majorProblems: major.filter(({ root }) => !Boolean(root))
         },
         derived.reduce(derivedRootReducer, { index: {}, orphans: [] })
     ))
+    .then(({ major: majorRoots, index }) =>
+        majorRoots.map((item) => index[item.root] ?
+            Object.assign({},
+                item,
+                { derived: index[item.root] }) :
+            item))
     .then((o) => fs.writeFileSync('dictionary.json', JSON.stringify(o)))
     .catch((err) => console.log(err));
