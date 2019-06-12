@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+    --fg-color: #151515;
+    --bg-color: #c0c0c0;
+    --card-bg-color: #efefef;
+}
+body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    background: var(--bg-color);
+    color: var(--fg-color);
+    font: 16px "Helvetica Neue", Helvetica, Liberation;
+}
+a {
+    font-style: oblique;
+}
+main {
+    padding: 0;
+    display: flex;
+    flex-flow: column;
+    max-width: 70ch;
+    margin: 0 auto;
+
+}
+
+section {
+    background: var(--card-bg-color);
+    margin: 1em 0;
+    padding: 0 1ch;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em auto;
+}
+
+td, th {
+    border: 1px solid;
+    padding: 1ch;
+    vertical-align: top;
+    width: 30%;
+}
+caption {
+    font-weight: bold;
+    padding: 1ch;
+}
+td {
+    text-align: left;
+    hyphens: auto;
+}
+
+th {
+    text-align: center    
+}
+th:first-child {    
+    width: 10%;
+    text-align: right;
+}
+
+.glossary-item--root,
+.glossary-item--gloss {
+}
+.glossary-item--root::before,
+.glossary-item--root::after {
+    content: "-"
+}
+.glossary-item--gloss::before {
+    content: "‘"
+}
+.glossary-item--gloss::after {
+    content: "’"
+}
+.glossary-item--gloss {
+    font-style: italic;
+    font-weight: normal;
+    margin-left: 1ch;
+}
+.glossary-item--header {
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+}

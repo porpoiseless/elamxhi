@@ -17,6 +17,8 @@ const scrapePage = async (url) => {
             let ret = {
                 root: root ? cleanString(root.textContent) : false,
                 gloss: cleanString(header.textContent)
+                    .replace(/‘|“|”|’/g, '')
+                    .replace(/^.{0,5}-\s*/, '')
             };
             // extract the table
             const table = [...tbl.querySelectorAll('tr')].map(
@@ -24,7 +26,7 @@ const scrapePage = async (url) => {
                 (row) => [...row.querySelectorAll('td')].map(
                     // extract text from each cell
                     (td) => td.textContent)
-                    .map(cleanString)
+                    .map((str) => cleanString(str).replace("\s*/\s*", " / "))
                     .filter(Boolean))	  // remove empty entries from each row
                 .filter((row) => row.some( // keep rows with non-label contents
                     (cell) =>
@@ -34,7 +36,7 @@ const scrapePage = async (url) => {
             const firstLine = table[0];
             if (firstLine instanceof Array && /^\s*note:/i.test(firstLine[0])) {
                 return Object.assign(ret, {
-                    note: firstLine[0],
+                    note: firstLine[0].replace(/^\s*note:\s*/i, ""),
                     stems: table.slice(1)
                 });
             } else {
@@ -56,7 +58,7 @@ const scrapePage = async (url) => {
                 return {
                     root: root,
                     major: guessMajorRoot(strong, gloss),
-                    gloss: cleanString(gloss)
+                    gloss: cleanString(gloss).replace(/‘|“|”|’/g, '')
                 };
             });
     });
@@ -170,7 +172,7 @@ const formatStemTable = ({ root, note, gloss, stems, src }) => {
         src: src
             .replace(/localhost:8080/, "ithkuil.net")
             .replace(/lexicon\.html/, "lexicon.htm")
-            .replace(/1\.html/, "1_.pdf")
+            .replace(/1\.html/, "1.pdf")
 
     };
 };
