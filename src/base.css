@@ -27,7 +27,7 @@ main {
 section {
     background: var(--card-bg-color);
     margin: 1em 0;
-    padding: 0 1ch;
+    padding: 0;
 }
 
 table {
@@ -59,9 +59,16 @@ th:first-child {
     width: 10%;
     text-align: right;
 }
-
+.derived-roots-list {
+    display: flex;
+    flex-flow: row;
+}
+.derived-roots-list:nth-child(odd) {
+    background: #ccf;
+}
 .glossary-item--root,
 .glossary-item--gloss {
+    
 }
 .glossary-item--root::before,
 .glossary-item--root::after {

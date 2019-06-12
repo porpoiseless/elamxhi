@@ -41,9 +41,9 @@ const derivedRootTemplate = ({ root, gloss, src }) => {
     const encodedRoot = encodeURI(root);
     return html`
 <div class="derived-roots-list" id="${encodedRoot}">
-<dt id="${encodedRoot + '_root'}">${root}</dt>
+<dt id="${encodedRoot + '_root'}" class="derived-root glossary-item--root">${root}</dt>
 <dd id="${encodedRoot + '_gloss'}">
-${gloss}
+<p class="glossary-item--gloss">${gloss}</p>
 ${srcTemplate(src)}
 </dt>
 </div>
