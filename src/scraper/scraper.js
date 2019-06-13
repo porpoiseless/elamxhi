@@ -26,7 +26,9 @@ const scrapePage = async (url) => {
                 (row) => [...row.querySelectorAll('td')].map(
                     // extract text from each cell
                     (td) => td.textContent)
-                    .map((str) => cleanString(str).replace("\s*/\s*", " / "))
+                    .map((str) => cleanString(str)
+                        .replace(/\s*\/\s*/g, " / ")
+                        .replace(/\s*\+\s*/g, " + "))
                     .filter(Boolean))	  // remove empty entries from each row
                 .filter((row) => row.some( // keep rows with non-label contents
                     (cell) =>
@@ -151,6 +153,10 @@ const handleComplementaryStemsSupplement = (input, output) =>
             designation: col
         }));
 //
+const exceptionRoots =
+    "žr zj xhč’ vř ţxh ţc’ tk’ spl sč rch qp qj psq ňsp lkw lfq ksn jr fq dhv dhg dhb bž"
+        .split(" ");
+const isException = (root) => exceptionRoots.includes(root);
 const formatStemTable = ({ root, note, gloss, stems, src }) => {
     let tbl = new StemTable();
     // first three lines of table are holistic stems
@@ -159,7 +165,7 @@ const formatStemTable = ({ root, note, gloss, stems, src }) => {
     const complementary = stems.slice(3);
     //
     handleHolisticStems(holistic, tbl);
-    if (/supplement/.test(src)) {
+    if (/supplement/.test(src) && !isException(root)) {
         handleComplementaryStemsSupplement(complementary, tbl);
     } else {
         handleComplementaryStemsLexicon(complementary, tbl);
@@ -234,5 +240,5 @@ const data = scrapeURLS('http://localhost:8080/lexicon.html',
                 item,
                 { derived: index[item.root] }) :
             item))
-    .then((o) => fs.writeFileSync('dictionary.json', JSON.stringify(o)))
+    .then((o) => fs.writeFileSync('src/data/dictionary.json', JSON.stringify(o)))
     .catch((err) => console.log(err));

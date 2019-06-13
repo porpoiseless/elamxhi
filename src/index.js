@@ -3,23 +3,23 @@ import './base.css';
 import dictionary from './data/dictionary.json';
 
 // create link to original source
-const srcTemplate = (src) => html`<cite><a href="${src}">Source: ${
+const srcTemplate = (src) => html`<cite ><a href="${src}">${
     /supplement/i.test(src) ?
-        "Supplement to Ithkuil Lexicon (2015)" :
-        "The Lexicon (2011)"
+        "Supplement" :
+        "Lexicon"
     }</a></cite>`;
 
 // create a heading for a root
 const rootTemplate = (root) => html`
 <h1 id="${encodeURI(root + '_root')}" class="glossary-item--root">
-${root}
+-${root}-
 </h1>
 `;
 
 // create a heading for a root gloss
 const glossTemplate = (root, gloss) => html`
 <h2 id="${encodeURI(root + '_gloss')}" class="glossary-item--gloss">
-${gloss}
+‘${gloss}’
 </h2>
 `;
 
@@ -40,10 +40,10 @@ const noteTemplate = (note) => html`
 const derivedRootTemplate = ({ root, gloss, src }) => {
     const encodedRoot = encodeURI(root);
     return html`
-<div class="derived-roots-list" id="${encodedRoot}">
-<dt id="${encodedRoot + '_root'}" class="derived-root glossary-item--root">${root}</dt>
+<div class="derived-root" id="${encodedRoot}">
+<dt id="${encodedRoot + '_root'}" class="glossary-item--root">-${root}-</dt>
 <dd id="${encodedRoot + '_gloss'}">
-<p class="glossary-item--gloss">${gloss}</p>
+<p class="glossary-item--gloss">‘${gloss}’</p>
 ${srcTemplate(src)}
 </dt>
 </div>
