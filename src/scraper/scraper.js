@@ -1,6 +1,11 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 // extract major roots
+//
+const fixSrcString = (str) => str.replace(/localhost:8080/, "ithkuil.net")
+    .replace(/lexicon\.html/, "lexicon.htm")
+    .replace(/1\.html/, "1.pdf");
+// 
 const scrapePage = async (url) => {
     // launch headless browser
     const browser = await puppeteer.launch();
@@ -69,7 +74,7 @@ const scrapePage = async (url) => {
 MAJOR: ${majorRoots.length}
 DERIVED: ${derivedRoots.length}`);
     // close browser
-    const tagWithURL = (obj) => Object.assign({}, obj, { src: url });
+    const tagWithURL = (obj) => Object.assign({}, obj, { src: fixSrcString(url) });
     await browser.close();
     //  
     return {
@@ -152,7 +157,6 @@ const handleComplementaryStemsSupplement = (input, output) =>
             pattern: col % 2 + 1,
             designation: col
         }));
-//
 const exceptionRoots =
     "žr zj xhč’ vř ţxh ţc’ tk’ spl sč rch qp qj psq ňsp lkw lfq ksn jr fq dhv dhg dhb bž"
         .split(" ");
@@ -176,9 +180,7 @@ const formatStemTable = ({ root, note, gloss, stems, src }) => {
         stems: tbl.stems,
         note: note,
         src: src
-            .replace(/localhost:8080/, "ithkuil.net")
-            .replace(/lexicon\.html/, "lexicon.htm")
-            .replace(/1\.html/, "1.pdf")
+
 
     };
 };
