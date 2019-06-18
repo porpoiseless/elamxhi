@@ -1,19 +1,15 @@
 * {
     box-sizing: border-box;
-    /* --color1: rgba(5, 74, 145, 1); */
-    /* --color2: rgba(62, 124, 177, 1); */
-    /* --color3: rgba(129, 164, 205, 1); */
-    /* --color4: rgba(219, 228, 238, 1); */
-    --color5: rgba(241, 115, 0, 1);
-    --color1: #eee;
-    --color2: #ccc;
-    --color3: #666;
-    --color4: #111;
-    --hl-color: var(--color5);
+    --color1: rgba(240, 100, 73, 1);
+    --color2: rgba(237, 230, 227, 1);
+    --color3: rgba(218, 218, 217, 1);
+    --color4: rgba(54, 56, 46, 1);
+    --color5: rgba(91, 195, 235, 1);
+    --hl-color: var(--color1);
+    --accent-color: var(--color5);
     --fg-color: var(--color4);
-    --bg-color: var(--color1);
-    --border-color: var(--color2);
-    --link-color: var(--hl-color);
+    --bg-color: var(--color3);
+    --border-color: var(--color3);
 }
 html, body {
     min-width: 100%;
@@ -28,7 +24,6 @@ body {
 }
 a{
     font-style: oblique;
-    color: var(--color3);
 }
 
 h1, h2, h3 {
@@ -47,7 +42,7 @@ main, section {
     align-items: center;
 }
 section {
-    margin: 2em 0;
+    margin: 0.5em 0;
     border: 1px solid var(--border-color);
 }
 
@@ -79,24 +74,38 @@ th:first-child {
     width: 10%;
     text-align: right;
 }
+
 dd, dt {
     padding: 0;
 }
 dl {
     margin: 0;
     padding: 0;
+    width: 100%;
+}
+
+.major-root {
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.2);
+}
+.major-root, derived-root {
+    background: var(--color2);
 }
 
 .derived-root {
     display: flex;
     flex-direction: row;
-    background: var(--bg-color);
     padding: 1em;
     justify-content: flex-start;
 }
 .derived-root:nth-child(odd) {
-    background: var(--color2);
+    background: var(--color3);
+    
 }
+.derived-root:nth-child(odd):target {
+    background: var(--hl-color);
+    color: var(--color2);
+}
+
 .glossary-item--root {
     font-weight: bold;
 }
@@ -119,6 +128,16 @@ h1.glossary-item--root ?{
     flex-flow: row;
     justify-content: flex-start;
 }
+.table-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.has-derived {
+}
+.has-derived header {
+    background: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
 
 
 details {
@@ -131,6 +150,7 @@ summary {
 
 :target {
     background: var(--hl-color);
+    color: var(--color2);
 }
 @media (min-width: 600px) {
     main {
@@ -139,23 +159,12 @@ summary {
     section {
 	max-width: 70ch;
     }
-    table {
-	width: calc(100% - 1ch);
-	margin: auto 1ch
-
-
-
-
-
-
-
-
-
-
-
-
-
-;
+    .major-root {
+	box-shadow: 0 2px 3px rgba(0,0,0,0.2);
     }
-    
+    table {
+	width: calc(100% - 2ch);
+	margin: auto 1ch;
+    }    
 }
+
