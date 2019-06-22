@@ -1,7 +1,6 @@
 import { html, render } from 'lit-html';
 import './base.css';
 import dictionary from './data/dictionary.json';
-
 // create link to original source
 const srcTemplate = (src) => html`<cite ><a href="${src}">${
     /supplement/i.test(src) ?
@@ -10,15 +9,15 @@ const srcTemplate = (src) => html`<cite ><a href="${src}">${
     }</a></cite>`;
 
 // create a heading for a root
-const rootTemplate = (root) => html`
-<h1 id="${encodeURI(root + '_root')}" class="glossary-item--root">
+const rootTemplate = (root, hl = false) => html`
+<h1 id="${encodeURI(root + '_root')}" class="glossary-item--root ${hl ? "highlight" : ""}">
 -${root}-
 </h1>
 `;
 
 // create a heading for a root gloss
-const glossTemplate = (root, gloss) => html`
-<h2 id="${encodeURI(root + '_gloss')}" class="glossary-item--gloss">
+const glossTemplate = (root, gloss, hl = false) => html`
+<h2 id="${encodeURI(root + '_gloss')}" class="glossary-item--gloss ${hl ? "highlight" : ""}">
 ‘${gloss}’
 </h2>
 `;
@@ -76,7 +75,7 @@ const rowTransformer = (props) => (row, rowIndex) => {
     const pattern = rowIndex + 1;
     return html`
 <tr>
-<th>
+<th scope="row">
 ${pattern}
 </th>
 ${row.map(
@@ -117,19 +116,51 @@ ${table.map(rowTransformer(Object.assign(
 };
 //
 const majorRootTemplate = ({ root, gloss, stems, src, derived, note }) => html`
-<section id="${encodeURI(root)}" class="${derived ? 'has-derived' : ''}">
+<section id="${encodeURI(root)}" class="major-root ${derived ? 'has-derived' : ''}">
   ${headerTemplate(root, gloss)}
   ${note ? noteTemplate(note) : ''}
+<div class="table-wrapper">
   ${stems.map(designationTransformer({ root: root }))}
+</div>
   ${srcTemplate(src)}
   ${derived ? derivedRootListTemplate(derived) : ''}
 </section>
-
 `;
-
+//
+const searchBar = (fields) => html`
+<section class="search-bar">
+  <form role="search">
+    <label for="search-query">
+      Search:
+    </label>
+    <input name="search-query" type="search" value=""/>
+    <label for="field-select">
+      Field:
+    </label>
+    <select name="field-select">
+      ${
+    fields.map(
+        (field) => html`<option value="${field}">${field}</option>`)
+    }
+    </select>
+  </form>
+</section>
+`;
 //
 const glossary = (items) => html`
-<main>
+<header class="page-header">
+  <h1 class="page-title">elamxhí</h1>
+  <h2 class="page-subtitle">a dictionary of Ithkuil roots</h2>
+</header>
+${
+    searchBar(["root",
+        "gloss",
+        "stems",
+        "derived",
+        "all"])
+
+    }
+<main class="">
 ${items.map(majorRootTemplate)}
 </main>
 `;
